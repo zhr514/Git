@@ -42,6 +42,8 @@
 	cd learnGit  //进入learnGit文件夹  
 	ls  // 展示文件
 
+	git clone url a // 把网上资源clone到a文件夹里
+
 查看分支 
 	git branch
 创建分支（不切换）
