@@ -8,7 +8,7 @@
 加入git家族
 	git init
 添加到暂存区
-	git add a.txt
+	git add a.txt  （git add * //提交全部到暂存区）
 查看暂存区状态
 	git status
 查看a.txt内容
