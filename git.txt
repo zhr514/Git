@@ -35,6 +35,7 @@
 	2.	git checkout -- a.txt  // 从版本库里找回a.txt
 上传
 	git remote add origin https://github.com/zhr626166/learnGit.git   // origin 可以更换
+		报错  git remote rm origin；再用上面的
 	git push -u origin master  // origin 要与上面的origin一致
 下载
 	git clone https://github.com/zhr626166/learnGit.git  
