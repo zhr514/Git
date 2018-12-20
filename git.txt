@@ -1,12 +1,20 @@
 （工作区）（暂存区）
 创建demo文件夹
 	mkdir demo
+加入git家族
+	git init demo
 进入demo文件夹
 	cd demo
 创建a.txt文件（工作区），在里面写入内容
-	............
-加入git家族
-	git init
+	touch a.txt 
+编辑a.txt
+	vim a.txt
+退出编辑a.txt
+	保存修改并退出 按下ESC键 ZZ或:wq
+	保存文件 按下ESC键 :w
+	放弃所有文件修改 按下ESC键 :q!
+	回退到文件打开最后一次保存的操作状态  按下ESC键 :e!
+
 添加到暂存区
 	git add a.txt  （git add * //提交全部到暂存区）
 查看暂存区状态
