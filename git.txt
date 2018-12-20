@@ -1,0 +1,142 @@
+（工作区）（暂存区）
+创建demo文件夹
+	mkdir demo
+进入demo文件夹
+	cd demo
+创建a.txt文件（工作区），在里面写入内容
+	............
+加入git家族
+	git init
+添加到暂存区
+	git add a.txt
+查看暂存区状态
+	git status
+查看a.txt内容
+	cat a.txt
+提交到版本库
+	git commit -m 第一次提交
+历史记录
+	git log // 查看多行历史记录
+	git log --pretty=oneline // 查看单行历史记录
+	git reflog // 记录每一次commit的数据
+回退版本
+	git reset --hard HEAD^ // 回到上一个版本  ；  --hard HEAD^^ // 回到上上一个版本  ； --hard HEAD~100 // 回到上100个版本
+	git reset --hard 582qal4 // 回到指定版本  用git reflog查看要回退到的id上
+查看不同
+	git diff a.txt // 修改了没有做任何提交，查看暂存区与a.txt工作区里的不同
+	git diff HEAD -- a.txt //查看暂存区与版本库的区别，在没commit之前
+撤销
+	git checkout -- a.txt // 撤销没有add的记录  (工作区的内容撤销了）
+	git reset HEAD a.txt // 撤销暂存区的内容，重新放回工作区 然后在  git checkout -- a.txt
+删除
+	rm a.txt  // 删除a.txt （工作区删除）（版本库没有删除）
+	1.	git rm a.txt  // 删除版本库里的a.txt
+		git commit -m del a.txt  //提交删除到版本库 
+	2.	git checkout -- a.txt  // 从版本库里找回a.txt
+上传
+	git remote add origin https://github.com/zhr626166/learnGit.git   // origin 可以更换
+	git push -u origin master  // origin 要与上面的origin一致
+下载
+	git clone https://github.com/zhr626166/learnGit.git  
+	cd learnGit  //进入learnGit文件夹  
+	ls  // 展示文件
+
+查看分支 
+	git branch
+创建分支（不切换）
+	git branch dev  // 创建dev分支
+切换分支
+	git checkout dev 
+创建+切换分支
+	git checkout -b dev
+合并某分支到当前分支
+	git merge dev    // 合并dev分支到master分支
+删除分支
+	git branch -d dev 
+
+
+
+Git是目前世界上最先进的分布式版本控制系统
+ 如果你使用Windows系统，为了避免遇到各种莫名其妙的问题，请确保目录名（包括父目录）不包含中文。
+$ git config --global user.name "Your Name"  //输入姓名
+$ git config --global user.email "email@example.com" // 输入邮箱
+
+$ mkdir demo  // 创建文件夹(demo)
+$ cd demo // 进入文件夹（demo）
+$ pwd  // pwd命令用于显示当前目录。
+$ git init   // 创建git库
+	用ls -ah命令就可以看见隐藏的git库
+
+  在demo文件夹里创建一个demo.txt文件，然后在里面随便写点东西
+
+$ git add demo.txt   // 把demo.txt文件添加到仓库    
+	git add -A  // 上传所有的新文件
+	git push  // 上传服务器
+	git clone  // 从服务器上下载下来
+
+	git add -A  提交所有变化
+	git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+	git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+$ git commit -m '第一次提交'   //文件提交到仓库  并备注（第一次提交）
+$ git status  // 查看结果，在 git add和git commit之后都可以用
+
+	初始化一个Git仓库，使用git init命令。
+
+	添加文件到Git仓库，分两步：
+
+	使用命令git add <file>，注意，可反复多次使用，添加多个文件；
+	使用命令git commit -m <message>，完成。
+
+$ git diff demo.txt  // 查看在demo.txt里修改了哪里
+
+$ git log  // 历史记录   HEAD 表示当前版本    上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写成HEAD~100。
+$ git log --pretty=oneline  // 一行显示历史记录
+
+$ git reset --hard HEAD^  // 回到上一个版本
+$ git reset --hard 1094a  // 回到指定版本（1094a版本号）     版本号没必要写全，前几位就可以了，Git会自动去找
+
+$ cat demo.txt  // 显示回退后的demo.txt内容
+
+$ git reflog  // 记录每一次命令
+	
+	穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+	要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
+
+$ git diff HEAD -- readme.txt   // 查看工作区和版本库里面最新版本的区别
+
+$ git checkout -- readme.txt  // 文件在工作区的修改全部撤销
+
+	你把工作区提交到了 暂存区，然后你想重新放回工作区
+$ git reset HEAD demo.txt
+
+$ git checkout -- readme.txt  // 丢弃工作区的修改
+
+$ rm demo.txt  // 删除demo.txt文件
+$ git status 
+$ git rm demo.txt   // 确定删除demo.txt文件
+$ git commit -m '删除的备注'
+$ git checkout -- demo.txt 一键还原
+
+
+推送到网络 
+	$ git remote add origin https://github.com/zhr626166/leargit.git
+	$ git push -u origin master   
+	zhr626166  zhr947947
+从网上下载
+	$ git clone https://github.com/zhr626166/leargit.git
+	$ cd leargit
+	$ ls	
+	
+$  git checkout -b dev   //  创建dev分支	
+	相当于  	git branch dev
+		git checkout dev
+
+$  git branch  // 查看当前分支   列出所有分支 当前分支会用*
+	
+$  git checkout master  // 切换分支  
+$  git merge dev   // 合并dev分支    
+	git merge  // 合并指定分支到当前分支
+$  git branch -d dev  // 删除分支
+	删除后 用 git branch 查看分支
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
