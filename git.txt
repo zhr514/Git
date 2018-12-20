@@ -17,12 +17,14 @@
 
 添加到暂存区
 	git add a.txt  （git add * //提交全部到暂存区）
+重命名 
+	git mv a.txt b.txt // 把a.txt的名改成b.txt   只有添加到暂存区里才能修改
 查看暂存区状态
-	git status
+	git status   、 git status -s //精简模式
 查看a.txt内容
 	cat a.txt
 提交到版本库
-	git commit -m 第一次提交
+	git commit -m 第一次提交    、 git commit -a  、 git commit -am 第一次提交
 历史记录
 	git log // 查看多行历史记录
 	git log --pretty=oneline // 查看单行历史记录
@@ -41,6 +43,7 @@
 	1.	git rm a.txt  // 删除版本库里的a.txt
 		git commit -m del a.txt  //提交删除到版本库 
 	2.	git checkout -- a.txt  // 从版本库里找回a.txt
+	git rm –r *  // 递归删除
 上传
 	git remote add origin https://github.com/zhr626166/learnGit.git   // origin 可以更换
 		报错  git remote rm origin；再用上面的
@@ -149,5 +152,13 @@ $  git merge dev   // 合并dev分支
 	git merge  // 合并指定分支到当前分支
 $  git branch -d dev  // 删除分支
 	删除后 用 git branch 查看分支
+
+ git commit：是将本地修改过的文件提交到本地库中；
+ git push：是将本地库中的最新信息发送给远程库；
+ git pull：是从远程获取最新版本到本地，并自动merge；
+ git fetch：是从远程获取最新版本到本地，不会自动merge；
+ git merge：是用于从指定的commit(s)合并到当前分支，用来合并两个分支；
+$ git merge -b  // 指将 b 分支合并到当前分支
+git pull 相当于 git fetch + git merge。
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
