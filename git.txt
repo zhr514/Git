@@ -57,6 +57,12 @@
 
 	git clone url a // 把网上资源clone到a文件夹里
 
+连接到github
+	cd ~ 主目录   ls 查看有无.ssh文件夹
+	无：
+	ssh-keygen -t rsa -C '邮箱' 生产.ssh文件夹，有两个内容  id_rsa和id_rsa.pub.
+	复制id_rsa.pub内容到github的settings SSH Keys  add ssh keys 即可
+
 查看分支 
 	git branch
 创建分支（不切换）
